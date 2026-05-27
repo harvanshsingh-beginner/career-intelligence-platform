@@ -32,7 +32,7 @@ function Interview() {
     try {
 
       const response = await axios.get(
-        "http://127.0.0.1:5000/interview/machine_learning_engineer"
+        "https://career-intelligence-platform-xoqm.onrender.com/interview/machine_learning_engineer"
       );
 
       setQuestions(response.data.questions);
@@ -49,7 +49,7 @@ function Interview() {
     try {
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/evaluate-answer",
+        "https://career-intelligence-platform-xoqm.onrender.com/evaluate-answer",
         {
           answer: answer,
 

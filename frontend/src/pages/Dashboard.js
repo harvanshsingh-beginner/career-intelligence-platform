@@ -57,7 +57,7 @@ function Dashboard() {
     try {
 
       const response = await axios.get(
-        "http://127.0.0.1:5000/resume-history"
+        "https://career-intelligence-platform-xoqm.onrender.com/resume-history"
       );
 
       setHistory(response.data);
@@ -101,7 +101,7 @@ function Dashboard() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/upload-resume",
+        "https://career-intelligence-platform-xoqm.onrender.com/upload-resume",
         formData
       );
 
@@ -275,7 +275,7 @@ function Dashboard() {
                 {/* DOWNLOAD BUTTON */}
 
                  <a
-                   href={`http://127.0.0.1:5000/download-report/${result.report_path.split("\\").pop().split("/").pop()}`}
+                   href={`https://career-intelligence-platform-xoqm.onrender.com/download-report/${result.report_path.split("\\").pop().split("/").pop()}`}
                    target="_blank"
                   rel="noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl inline-block mt-6"

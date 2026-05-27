@@ -24,7 +24,7 @@ function Admin() {
     try {
 
       const response = await axios.get(
-        "http://127.0.0.1:5000/admin-analytics"
+        "https://career-intelligence-platform-xoqm.onrender.com/admin-analytics"
       );
 
       setAnalytics(response.data);

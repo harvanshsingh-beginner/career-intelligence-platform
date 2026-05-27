@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:5000/login"
+url = "https://career-intelligence-platform-xoqm.onrender.com/login"
 
 data = {
     "email": "bhaskar@gmail.com",
