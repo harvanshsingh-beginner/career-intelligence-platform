@@ -1,9 +1,8 @@
 Flask
 flask-cors
 mysql-connector-python
-PyPDF2
-reportlab
-google-generativeai
-PyJWT
 gunicorn
-werkzeug
+PyJWT
+PyPDF2
+google-generativeai
+Flask-Bcrypt
