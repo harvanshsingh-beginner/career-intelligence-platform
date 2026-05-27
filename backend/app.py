@@ -171,12 +171,14 @@ def upload_resume():
         job_analysis["match_percentage"]
     )
 
-    cursor.execute(
-        insert_query,
-        values
-    )
+    if cursor:
 
-    connection.commit()
+        cursor.execute(
+            insert_query,
+            values
+        )
+
+        connection.commit()
 
     # SAVE RESUME HISTORY
 
@@ -196,12 +198,14 @@ def upload_resume():
         ", ".join(skills)
     )
 
-    cursor.execute(
-        insert_query,
-        values
-    )
+    if cursor:
 
-    connection.commit()
+        cursor.execute(
+            insert_query,
+            values
+        )
+
+        connection.commit()
 
     # GENERATE PDF REPORT
 
@@ -266,11 +270,16 @@ def upload_resume():
     })
 
 
+
 @app.route(
     "/resume-history",
     methods=["GET"]
 )
 def get_resume_history():
+
+    if not cursor:
+
+        return jsonify([])
 
     query = """
     SELECT *
@@ -324,6 +333,15 @@ def download_report(filename):
     methods=["GET"]
 )
 def admin_analytics():
+
+    if not cursor:
+
+        return jsonify({
+
+            "total_resumes": 0,
+            "average_ats": 0,
+            "top_skills": []
+        })
 
     # TOTAL RESUMES
 

@@ -1,11 +1,22 @@
 import mysql.connector
 
 
-connection = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="123456",
-    database="career_intelligence"
-)
+try:
 
-cursor = connection.cursor()
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="career_intelligence"
+    )
+
+    cursor = connection.cursor()
+
+    print("Database Connected")
+
+except Exception as e:
+
+    print("Database Error:", e)
+
+    connection = None
+    cursor = None
